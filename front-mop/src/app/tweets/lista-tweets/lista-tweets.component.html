@@ -1,0 +1,29 @@
+<div class="container" style="
+    height: 500px;
+    width: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  ">
+    <table class="table table-hover table-striped"
+    *ngIf="listaTweet | async as tweets; else carregando">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Texto</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let tweet of tweets">
+            <tr>
+                <th scope="row">{{tweet.texto}}</th>
+            </tr>
+    </table>
+</div>
+
+
+
+    <ng-template #carregando>
+      <div id="preloader">
+          carregando...
+      </div>
+    </ng-template>
+ 
+

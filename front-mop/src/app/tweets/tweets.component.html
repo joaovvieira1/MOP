@@ -1,0 +1,67 @@
+<div class="grid mt-5">
+    <div class="row" style="align-items: center;
+    justify-content: center;">
+        <div class="col-md-4" style="align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;">
+            <h4> Negativos: </h4>
+            <app-lista-tweets [listaTweet]="listaTweetsNegativo">
+            </app-lista-tweets>
+        </div>
+        <div class="col-md-3" style="align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 0px;
+        display: flex;">
+            <div class="row" style="margin-bottom: 3em;">
+                <ngx-charts-pie-chart [legendTitle]="'Analise'" [results]="dados" [customColors]="cores"
+                    [view]="[300,300]"
+                    
+                    >
+
+                </ngx-charts-pie-chart>
+            </div>
+            <div class="row" style="margin-bottom: 2em;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: flex;">
+
+                <h1 style="align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;">
+                    Acurácia:
+                </h1>
+                <span style="font-size: 22px;"> {{acuracia}} </span>
+            </div>
+
+
+            <div class="row" style="margin-bottom: 1em;">
+
+                <button class="btn btn-success" (click)="carregarMaisTweet()">
+                    Importar Tweets </button>
+            </div>
+            <div class="row">
+
+                <button class="btn btn-primary" (click)="analisarIndefinidos()">
+                    Analisar Tweets
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;" >
+            <h4> Positivos: </h4>
+            <app-lista-tweets [listaTweet]="listaTweetsPositivo">
+            </app-lista-tweets>
+            
+        </div>
+    </div>
+
+</div>
+
